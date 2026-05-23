@@ -182,4 +182,4 @@ updates, chat events, and tournament watch/update events.
 | Ananya Saggi | [@AnanyaS05](https://github.com/AnanyaS05)             |
 | Andrea Son   | [@SonAndrea](https://github.com/SonAndrea)             |
 | Caio DaSilva | [@caiodasilva2005](https://github.com/caiodasilva2005) |
-| John Rotondo | [@Rotondoj1](https://github.com/Rotondoj1)             |
+| John Rotondo | [@Rotondojs](https://github.com/Rotondojs)             |
