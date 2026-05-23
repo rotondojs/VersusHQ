@@ -1,0 +1,45 @@
+/**
+ * Layout rules for the game page shell, including the roster area and frame sizing.
+ */
+.gamePanel {
+  padding: 1.15rem;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  min-width: 0;
+  border-radius: var(--radius-lg);
+}
+
+.gameRoster {
+  display: grid;
+  gap: 1rem;
+}
+
+.gameRosterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gameRosterActions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.gameFrame {
+  border: 1px solid var(--surface-outline);
+  border-radius: 1.2rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.gameFrame.waiting {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  color: var(--fg-secondary);
+}

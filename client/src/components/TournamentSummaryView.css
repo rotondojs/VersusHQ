@@ -1,0 +1,33 @@
+.tournamentSummary {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px dashed black;
+  color: var(--gray-foreground);
+  gap: 0.75rem;
+}
+
+.tournamentSummary .stats {
+  text-align: center;
+  width: 10rem;
+  flex-shrink: 0;
+}
+
+.tournamentSummary .summaryMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.tournamentSummary .mid {
+  color: cornflowerblue;
+}
+
+.tournamentSummary .meta {
+  font-size: 0.75rem;
+  color: var(--gray-foreground);
+}
+
+.tournamentSummary .host {
+  white-space: nowrap;
+}

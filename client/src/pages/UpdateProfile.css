@@ -1,0 +1,50 @@
+.profileEditorMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.2rem;
+}
+
+.profileEditorSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.profileEditorColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profileEditorRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.profileEditorTextarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.profileEditorPreview {
+  display: flex;
+  justify-content: center;
+}
+
+.profileEditorPreview img {
+  width: 132px;
+  height: 132px;
+  border-radius: 24px;
+  object-fit: cover;
+  border: 3px solid color-mix(in srgb, var(--accent-primary) 24%, white);
+  box-shadow: var(--shadow-soft);
+}
+
+.profileEditorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}

@@ -1,0 +1,652 @@
+.tournamentPageShell {
+  gap: 1rem;
+}
+
+.tournamentHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.tournamentHeroCopy {
+  display: grid;
+  gap: 1rem;
+}
+
+.tournamentTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.tournamentPageTitle {
+  margin: 0;
+}
+
+.tournamentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-content: start;
+  justify-content: flex-end;
+}
+
+.tournament-action-btn {
+  min-width: 10.5rem;
+}
+
+.tournamentDanger {
+  color: #9b233e;
+}
+
+.tournamentMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.tournamentMetaCard {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 12%, white);
+}
+
+.tournamentMetaLabel {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.tournamentMetaValue {
+  color: var(--fg-primary);
+}
+
+.status-bubble {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.status-upcoming {
+  background: rgba(24, 127, 98, 0.12);
+  color: #145846;
+}
+
+.status-ongoing {
+  background: rgba(9, 146, 194, 0.14);
+  color: #0a5871;
+}
+
+.status-completed {
+  background: rgba(11, 45, 114, 0.12);
+  color: var(--accent-primary);
+}
+
+.status-cancelled {
+  background: rgba(188, 66, 87, 0.12);
+  color: #932f45;
+}
+
+.tournamentTabs {
+  padding: 0.6rem;
+}
+
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--fg-secondary);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  box-shadow: 0 14px 28px rgba(11, 45, 114, 0.2);
+}
+
+.tournamentGrid,
+.tournamentDetails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tournamentPanel,
+.tournamentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.tournamentPanelEyebrow {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.description-text {
+  color: var(--fg-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.details-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.details-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.details-list span {
+  color: var(--fg-secondary);
+}
+
+.participants-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.participants-table th,
+.participants-table td {
+  padding: 1rem 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+}
+
+.participants-table thead th {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.role-text {
+  color: var(--fg-secondary);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.btn-kick {
+  border: 1px solid rgba(188, 66, 87, 0.18);
+  background: rgba(255, 239, 242, 0.9);
+  color: #982740;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 700;
+}
+
+.btn-kick:hover {
+  transform: translateY(-1px);
+}
+
+.bracketTab {
+  min-height: 30rem;
+}
+
+.tournamentChatHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tournament-chat-tab {
+  height: min(42rem, var(--content-vh));
+}
+
+.tournament-chat-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tournament-chat-legend-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.tournament-chat-legend-host {
+  background-color: var(--chat-host-bg);
+  border-color: var(--chat-host-border);
+}
+
+.tournament-chat-legend-participant {
+  background-color: var(--chat-participant-bg);
+  border-color: var(--chat-participant-border);
+}
+
+.tournament-chat-legend-spectator {
+  background-color: var(--chat-spectator-bg);
+  border-color: var(--chat-spectator-border);
+}
+
+.completedTournamentDetails {
+  align-items: stretch;
+}
+
+.podiumHeading {
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.podiumGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+  min-height: 310px;
+  perspective: 1000px;
+}
+
+.podiumColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  animation: podiumColumnReveal 760ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.podiumColumn:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.podiumColumn:nth-child(2) {
+  animation-delay: 170ms;
+}
+
+.podiumColumn:nth-child(3) {
+  animation-delay: 260ms;
+}
+
+.podiumColumn:nth-child(4) {
+  animation-delay: 350ms;
+}
+
+.podiumAvatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--accent-primary) 12%, white);
+  background: rgba(255, 255, 255, 0.74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 28px rgba(11, 45, 114, 0.12);
+  animation: podiumAvatarFloat 5.8s ease-in-out infinite;
+}
+
+.podiumAvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.podiumAvatarFallback {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--fg-secondary);
+}
+
+.podiumName {
+  min-height: 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.podiumStep {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 1.2rem 1.2rem 0.5rem 0.5rem;
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-navy));
+  color: white;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-top: 0.85rem;
+  box-shadow: var(--shadow-soft);
+  transform-origin: bottom center;
+  transform: scaleY(0.08);
+  opacity: 0.4;
+  animation: podiumStepRise 920ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.podiumStep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 18%,
+    rgba(255, 255, 255, 0.08) 34%,
+    rgba(255, 255, 255, 0.3) 48%,
+    transparent 66%
+  );
+  transform: translateX(-135%) skewX(-18deg);
+  animation: podiumStepSheen 6.4s ease-in-out infinite;
+}
+
+.podiumColumn:nth-child(1) .podiumStep {
+  animation-delay: 220ms;
+}
+
+.podiumColumn:nth-child(2) .podiumStep {
+  animation-delay: 310ms;
+}
+
+.podiumColumn:nth-child(3) .podiumStep {
+  animation-delay: 400ms;
+}
+
+.podiumColumn:nth-child(4) .podiumStep {
+  animation-delay: 490ms;
+}
+
+.podiumColumn-place-1 .podiumAvatar {
+  border-color: color-mix(in srgb, var(--brand-cream) 66%, white);
+  animation:
+    podiumAvatarFloat 5.4s ease-in-out infinite,
+    podiumChampionGlow 4s ease-in-out infinite;
+}
+
+.podiumColumn-place-1 .podiumStep {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-cream) 28%, var(--brand-blue)),
+    var(--brand-navy)
+  );
+  box-shadow:
+    0 20px 36px rgba(11, 45, 114, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.podiumColumn-place-1 .podiumPlace {
+  animation: podiumChampionPulse 3.8s ease-in-out infinite;
+}
+
+.podiumColumn-open .podiumAvatar {
+  animation: none;
+  box-shadow: none;
+}
+
+.podiumColumn-open .podiumStep::after {
+  animation: none;
+  opacity: 0.14;
+}
+
+.podiumPlace {
+  position: relative;
+  z-index: 1;
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.rankingList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rankingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.rankingPlace {
+  font-weight: 800;
+  color: var(--accent-primary);
+  min-width: 3rem;
+}
+
+.rankingUser {
+  color: var(--fg-primary);
+}
+
+@keyframes podiumColumnReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes podiumStepRise {
+  0% {
+    transform: scaleY(0.08);
+    opacity: 0.4;
+  }
+  70% {
+    transform: scaleY(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes podiumStepSheen {
+  0%,
+  12% {
+    transform: translateX(-135%) skewX(-18deg);
+  }
+  28%,
+  100% {
+    transform: translateX(170%) skewX(-18deg);
+  }
+}
+
+@keyframes podiumAvatarFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes podiumChampionGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(246, 231, 188, 0.18),
+      0 18px 30px rgba(11, 45, 114, 0.14);
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(246, 231, 188, 0.06),
+      0 22px 36px rgba(11, 45, 114, 0.18);
+  }
+}
+
+@keyframes podiumChampionPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.24);
+  }
+  50% {
+    transform: scale(1.04);
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.34);
+  }
+}
+
+.tournamentBracket.list-mode .tournamentBracketNode {
+  margin-bottom: 1rem;
+}
+
+.match-list-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.2s;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.match-list-link:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: color-mix(in srgb, var(--accent-primary) 18%, white);
+}
+
+.match-number-blue {
+  color: var(--accent-primary);
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.vs-text {
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+  margin: 0 4px;
+}
+
+.winner-label {
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+  margin-top: 4px;
+}
+
+.tournamentBracketChildren {
+  margin-top: 0.8rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  padding-left: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .tournamentMetaGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tournamentHero,
+  .tournamentGrid,
+  .tournamentDetails {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .podiumColumn,
+  .podiumAvatar,
+  .podiumStep,
+  .podiumStep::after,
+  .podiumColumn-place-1 .podiumAvatar,
+  .podiumColumn-place-1 .podiumPlace {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .tournamentActions {
+    justify-content: flex-start;
+  }
+
+  .tournament-chat-tab {
+    height: auto;
+    min-height: 32rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .participants-table,
+  .participants-table thead,
+  .participants-table tbody,
+  .participants-table tr,
+  .participants-table th,
+  .participants-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .participants-table thead {
+    display: none;
+  }
+
+  .participants-table tr {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  }
+
+  .participants-table td {
+    padding: 0.4rem 0;
+    border-bottom: 0;
+  }
+
+  .text-right {
+    text-align: left;
+  }
+
+  .podiumGrid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    min-height: 0;
+  }
+}

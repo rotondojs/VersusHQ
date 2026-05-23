@@ -1,0 +1,21 @@
+/**
+ * Responsive layout for the game page and its companion roster/chat panel.
+ */
+div.gameContainer {
+  display: grid;
+  min-height: var(--content-vh);
+  gap: 1rem;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 1fr);
+}
+
+.gamePageShell {
+  gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+  div.gameContainer {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+}

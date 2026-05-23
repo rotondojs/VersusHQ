@@ -1,0 +1,546 @@
+/**
+ * Presentation and motion rules for the Battleship game screen.
+ */
+.battleshipGame {
+  --battleship-ocean-deep: #0f3b5f;
+  --battleship-ocean: #1f5d8b;
+  --battleship-ocean-soft: #d8eaf7;
+  --battleship-foam: #f7fbff;
+  --battleship-alert: #cf4f4f;
+  --battleship-gold: #c48f2f;
+  --battleship-cell-size: 2.5rem;
+  --battleship-board-gap: 0.18rem;
+  gap: 1.25rem;
+  container-type: inline-size;
+}
+
+.battleshipHero {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.battleshipHeroCard,
+.battleshipScoreboard,
+.battleshipFleetPanel,
+.battleshipPlacementControls,
+.battleshipBoardPanel,
+.battleshipNotice {
+  border: 1px solid color-mix(in srgb, var(--gray-foreground) 40%, white);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  box-shadow: 0 0.9rem 2rem rgba(15, 59, 95, 0.08);
+  animation: battleshipRise 420ms ease both;
+}
+
+.battleshipHeroCard {
+  padding: 1.1rem 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.battleshipHeroCard h2,
+.battleshipCardHeader h3,
+.battleshipBoardHeader h3 {
+  margin: 0;
+}
+
+.battleshipHeroCard p,
+.battleshipCardHeader p,
+.battleshipBoardHeader p {
+  margin: 0;
+  color: var(--gray-foreground);
+}
+
+.battleshipHeroCard-mission {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 34%),
+    linear-gradient(145deg, #0a2742 0%, #10395c 40%, #16507a 72%, #1f5d8b 100%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+.battleshipHeroCard-mission p,
+.battleshipHeroCard-mission .battleshipHeroEyebrow {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.battleshipHeroEyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.battleshipHeroCard-status {
+  align-content: start;
+}
+
+.battleshipPhaseBadge,
+.battleshipMiniBadge,
+.battleshipBoardBadge {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.battleshipPhaseBadge {
+  background: rgba(15, 59, 95, 0.1);
+  color: var(--battleship-ocean-deep);
+}
+
+.battleshipPhaseBadge-live {
+  background: rgba(31, 93, 139, 0.14);
+  animation: battleshipPulse 1.8s ease-in-out infinite;
+}
+
+.battleshipMiniBadge,
+.battleshipBoardBadge {
+  background: rgba(196, 143, 47, 0.12);
+  color: #865f14;
+}
+
+.battleshipMeta,
+.battleshipFleetPanels,
+.battleshipBoards {
+  display: grid;
+  gap: 1rem;
+}
+
+.battleshipMeta,
+.battleshipFleetPanels {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.battleshipBoards {
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+}
+
+.battleshipScoreboard,
+.battleshipFleetPanel,
+.battleshipPlacementControls {
+  padding: 1rem;
+}
+
+.battleshipCardHeader,
+.battleshipBoardHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.battleshipScoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(216, 234, 247, 0.45);
+  border: 1px solid rgba(31, 93, 139, 0.1);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.battleshipScoreRow span,
+.battleshipFleetShip span {
+  display: grid;
+}
+
+.battleshipScoreRow small,
+.battleshipFleetShip small {
+  color: var(--gray-foreground);
+}
+
+.battleshipScoreRow strong {
+  font-size: 1.35rem;
+}
+
+.battleshipScoreRow.isActive {
+  background: rgba(31, 93, 139, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(31, 93, 139, 0.12);
+  transform: translateY(-1px);
+}
+
+.battleshipScoreRow.isWinner {
+  background: rgba(196, 143, 47, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(196, 143, 47, 0.16);
+}
+
+.battleshipRubric {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.battleshipRubricRow,
+.battleshipFleetShip {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.85rem;
+  background: rgba(247, 251, 255, 0.96);
+}
+
+.battleshipFleetShip {
+  margin-top: 0.6rem;
+  border: 1px solid rgba(31, 93, 139, 0.08);
+}
+
+.battleshipFleetShip strong {
+  font-size: 0.92rem;
+}
+
+.battleshipFleetShip.isAfloat strong {
+  color: #226a3f;
+}
+
+.battleshipFleetShip.isSunk {
+  background: rgba(207, 79, 79, 0.08);
+}
+
+.battleshipFleetShip.isSunk strong {
+  color: #9f3030;
+}
+
+.battleshipPlacementControls {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.battleshipShipPicker,
+.battleshipOrientation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.battleshipShipButton {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  flex: 1 1 14rem;
+}
+
+.battleshipShipButton small {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.battleshipShipButton.isPlaced {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+button.selectedShip {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  transform: translateY(-1px);
+}
+
+.battleshipNotice {
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, #f7fbff, #eef6fc);
+}
+
+/**
+ * Allows each board panel to scroll horizontally as a fallback when the container becomes narrower
+ * than the full 8x8 board, instead of clipping the final columns.
+ */
+.battleshipBoardPanel {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem;
+  min-width: 0;
+  scrollbar-gutter: stable both-edges;
+}
+
+.battleshipBoardPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.55), transparent 38%);
+  pointer-events: none;
+}
+
+.battleshipBoardPanel-active {
+  border-color: rgba(31, 93, 139, 0.3);
+  box-shadow:
+    0 0.9rem 2rem rgba(15, 59, 95, 0.1),
+    0 0 0 1px rgba(31, 93, 139, 0.08);
+}
+
+.battleshipBoardPanel-spectator {
+  background: linear-gradient(180deg, #fafcfe 0%, #f4f8fc 100%);
+}
+
+.battleshipBoardHeader {
+  margin-bottom: 0.75rem;
+}
+
+.battleshipBoard {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: var(--battleship-board-gap);
+}
+
+.battleshipBoard th,
+.battleshipBoard td {
+  padding: 0;
+  text-align: center;
+}
+
+.battleshipBoard thead th,
+.battleshipBoard tbody th {
+  color: var(--gray-foreground);
+  font-size: clamp(0.72rem, 1.8cqw, 0.85rem);
+  font-weight: 700;
+}
+
+.battleshipCell {
+  position: relative;
+  overflow: hidden;
+  width: var(--battleship-cell-size);
+  height: var(--battleship-cell-size);
+  border: 1px solid rgba(15, 59, 95, 0.18);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent),
+    linear-gradient(135deg, #eef6fd, #d8eaf7);
+  color: #16344f;
+  font-weight: 700;
+  font-size: clamp(0.78rem, calc(var(--battleship-cell-size) * 0.38), 1rem);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.battleshipCell:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.battleshipCell-ship {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent),
+    linear-gradient(135deg, #77b3df, #2c77af);
+  color: white;
+}
+
+.battleshipCell-hit {
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.45), transparent 45%),
+    linear-gradient(135deg, #f2a28c, #d55e4c);
+  color: white;
+  animation: battleshipHitFlash 420ms ease;
+}
+
+.battleshipCell-sunk {
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.35), transparent 42%),
+    linear-gradient(135deg, #c23f3f, #7f1d1d);
+  color: white;
+  animation: battleshipSunkAlarm 540ms ease;
+}
+
+.battleshipCell-miss {
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.55), transparent 28%),
+    linear-gradient(135deg, #edf3f7, #c8d4dd);
+  color: #415160;
+  animation: battleshipMissDrop 360ms ease;
+}
+
+.battleshipCell-clickable:not(:disabled) {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(31, 93, 139, 0.08);
+}
+
+.battleshipCell-clickable:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0.45rem 1rem rgba(15, 59, 95, 0.16),
+    inset 0 0 0 1px rgba(31, 93, 139, 0.14);
+}
+
+.battleshipCell-unknown.battleshipCell-clickable:not(:disabled) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent),
+    linear-gradient(135deg, #e7f2fb, #c9e4f6);
+}
+
+.battleshipCell-unknown.battleshipCell-clickable:not(:disabled)::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: translateX(-100%);
+  animation: battleshipSweep 2.8s linear infinite;
+}
+
+.battleshipCell-unknown.battleshipCell-clickable:not(:disabled):hover::before {
+  animation-duration: 1.3s;
+}
+
+@keyframes battleshipRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes battleshipPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(31, 93, 139, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(31, 93, 139, 0);
+  }
+}
+
+@keyframes battleshipSweep {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes battleshipHitFlash {
+  0% {
+    transform: scale(0.88);
+    box-shadow: 0 0 0 0 rgba(213, 94, 76, 0.35);
+  }
+  65% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(213, 94, 76, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes battleshipMissDrop {
+  0% {
+    transform: translateY(-4px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes battleshipSunkAlarm {
+  0% {
+    transform: scale(0.86);
+  }
+  55% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/**
+ * Keeps the board readable inside different game-panel widths by scaling board metrics from the
+ * available container size instead of relying only on viewport breakpoints.
+ */
+@container (max-width: 980px) {
+  .battleshipBoards {
+    grid-template-columns: 1fr;
+  }
+
+  .battleshipGame {
+    --battleship-cell-size: 2.2rem;
+  }
+}
+
+@container (max-width: 760px) {
+  .battleshipGame {
+    --battleship-cell-size: 1.95rem;
+    --battleship-board-gap: 0.14rem;
+  }
+
+  .battleshipBoardPanel {
+    padding: 0.85rem;
+  }
+
+  .battleshipCardHeader,
+  .battleshipBoardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@container (max-width: 620px) {
+  .battleshipHero,
+  .battleshipMeta,
+  .battleshipFleetPanels,
+  .battleshipBoards {
+    grid-template-columns: 1fr;
+  }
+
+  .battleshipGame {
+    --battleship-cell-size: 1.72rem;
+    --battleship-board-gap: 0.12rem;
+  }
+
+  .battleshipBoardPanel {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .battleshipGame {
+    gap: 1rem;
+  }
+
+  .battleshipCardHeader,
+  .battleshipBoardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .battleshipScoreRow,
+  .battleshipRubricRow,
+  .battleshipFleetShip {
+    padding-inline: 0.7rem;
+  }
+}
+
+/**
+ * Preserves accessibility for users who prefer less motion by disabling the decorative animations
+ * and transitions used elsewhere in the Battleship screen.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .battleshipHeroCard,
+  .battleshipScoreboard,
+  .battleshipFleetPanel,
+  .battleshipPlacementControls,
+  .battleshipBoardPanel,
+  .battleshipNotice,
+  .battleshipPhaseBadge-live,
+  .battleshipCell,
+  .battleshipCell-unknown.battleshipCell-clickable:not(:disabled)::before {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,64 @@
+.settingsCard {
+  padding: 1.5rem;
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-radius: var(--radius-lg);
+}
+
+.themeOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.themeOptionCard {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+  min-height: 6.6rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--surface-outline);
+  background: var(--surface-strong);
+  color: var(--fg-primary);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.themeOptionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+.themeOptionCard-active {
+  border-color: color-mix(in srgb, var(--accent-secondary) 44%, white);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-strong) 86%, white),
+    var(--surface-glass)
+  );
+  box-shadow:
+    0 0 0 1px rgba(10, 196, 224, 0.12),
+    var(--shadow-strong);
+}
+
+.themeOptionLabel {
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.themeOptionDescription {
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .themeOptions {
+    grid-template-columns: 1fr;
+  }
+}

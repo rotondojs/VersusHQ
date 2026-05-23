@@ -1,0 +1,17 @@
+span.opBlue {
+  color: var(--accent-primary);
+  font-weight: 800;
+}
+
+.threadBodyText {
+  color: var(--fg-secondary);
+  line-height: 1.8;
+}
+
+.threadCommentsPanel,
+.threadComposerPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}

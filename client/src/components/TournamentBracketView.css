@@ -1,0 +1,77 @@
+.bracket-container {
+  overflow-x: auto;
+  padding: 0.35rem 0.15rem 0.35rem 0;
+}
+
+.tournamentBracketNode {
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 10%, white);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.58);
+}
+
+.bracket-svg {
+  display: block;
+}
+
+.round-label {
+  text-anchor: middle;
+  font-size: 15px;
+  font-weight: 700;
+  fill: var(--fg-primary);
+}
+
+.match-group {
+  cursor: pointer;
+}
+
+.match-rect {
+  fill: rgba(255, 255, 255, 0.86);
+  stroke: rgba(11, 45, 114, 0.18);
+  stroke-width: 1;
+  rx: 16;
+}
+
+.match-rect.hovered {
+  stroke: var(--accent-secondary);
+  stroke-width: 2;
+}
+
+.match-divider {
+  stroke: rgba(11, 45, 114, 0.08);
+}
+
+/* Player slots */
+.player-slot {
+  fill: rgba(255, 255, 255, 0.9);
+}
+
+.player-slot.winner {
+  fill: rgba(246, 231, 188, 0.78);
+}
+
+.player-text {
+  font-size: 11px;
+  fill: var(--fg-primary);
+}
+
+.player-text.empty {
+  fill: var(--fg-muted);
+}
+
+.player-text.winner {
+  fill: #71530d;
+  font-weight: 600;
+}
+
+.match-label {
+  font-size: 11px;
+  fill: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.bracket-line {
+  fill: none;
+  stroke: rgba(11, 45, 114, 0.18);
+  stroke-width: 2;
+}
